@@ -50,6 +50,21 @@
     const inventorsFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
     console.log(inventorsFullName);
 
+    // Array.prototype.sort()
+    // 3. Sort the inventors by birth-date, oldest to youngest
+    // sort in details
+    const sortInventorBasedOnBirthDate = inventors.sort(function(a, b){
+          if(a.year > b.year){
+            return 1;
+          }else{
+             return -1;
+          }
+    });
+   console.table(sortInventorBasedOnBirthDate);
+   // sort hand of sort method
+   const sortInventorsBirthDate = inventors.sort((a, b) => { a.year > b.year ? 1: -1});
+   console.table(sortInventorsBirthDate);
+   
   </script>
 </body>
 </html>
