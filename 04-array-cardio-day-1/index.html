@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio Day-1</title>
+  <style>
+    .title{
+       text-align: center;
+       font-weight: 600;
+       font-size: medium;
+    }
+  </style>
 </head>
 <body>
-  <p><em>Please have a look at the JavaScript Console</em> 💁</p>
+  <p class="title"><em>Please have a look at the JavaScript Console</em> 💁</p>
   <script>
     const inventors = [
       { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
@@ -29,7 +36,14 @@
       'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
+
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    // complete commented tasks
+    // Array.prototype.filter()
+    // 1. Filter the list of inventors for those who were born in the 1500's
+    const filterDataBasedOnYear = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+    console.table(filterDataBasedOnYear);
 
   </script>
 </body>
