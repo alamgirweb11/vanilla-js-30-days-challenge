@@ -45,6 +45,11 @@
     const filterDataBasedOnYear = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
     console.table(filterDataBasedOnYear);
 
+    // Array.prototype.map()
+    // 2. Give us an array of the inventor first and last names
+    const inventorsFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+    console.log(inventorsFullName);
+
   </script>
 </body>
 </html>
