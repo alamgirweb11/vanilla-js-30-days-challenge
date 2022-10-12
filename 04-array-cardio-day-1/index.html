@@ -64,7 +64,13 @@
    // sort hand of sort method
    const sortInventorsBirthDate = inventors.sort((a, b) => { a.year > b.year ? 1: -1});
    console.table(sortInventorsBirthDate);
-   
+
+    // Array.prototype.reduce()
+    // 4. How many years did all the inventors live all together?
+    const totalLiveYearsOfInventors = inventors.reduce((total, inventor) => {
+        return  total + (inventor.passed - inventor.year);
+    }, 0);
+    console.log(totalLiveYearsOfInventors);
   </script>
 </body>
 </html>
