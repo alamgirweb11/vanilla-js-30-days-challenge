@@ -62,7 +62,7 @@
     });
    console.table(sortInventorBasedOnBirthDate);
    // sort hand of sort method
-   const sortInventorsBirthDate = inventors.sort((a, b) => { a.year > b.year ? 1: -1});
+   const sortInventorsBirthDate = inventors.sort((a, b) => { a.year > b.year ? 1 : -1});
    console.table(sortInventorsBirthDate);
 
     // Array.prototype.reduce()
@@ -71,6 +71,15 @@
         return  total + (inventor.passed - inventor.year);
     }, 0);
     console.log(totalLiveYearsOfInventors);
+
+     // 5. Sort the inventors by years lived
+   const sortInventorBasedOnLivedYears = inventors.sort((a, b) => {
+            const lastInventor = a.passed - a.year;
+            const nextInventor = b.passed - b.year;
+            return lastInventor > nextInventor ? -1 : 1;
+   });
+   console.table(sortInventorBasedOnLivedYears);
+
   </script>
 </body>
 </html>
