@@ -37,8 +37,6 @@
       'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
 
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
     // complete commented tasks
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
@@ -101,6 +99,17 @@
   });
  console.log(peopleSortByAlphabetically);
 
+  // 8. Reduce Exercise
+  // Sum up the instances of each of these
+  const transports = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+  const transposition = transports.reduce((obj, item) => {
+      if(!obj[item]){
+         obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+  }, {});
+ console.log(transposition);
   </script>
 </body>
 </html>
