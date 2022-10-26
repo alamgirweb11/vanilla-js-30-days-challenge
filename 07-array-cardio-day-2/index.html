@@ -25,6 +25,15 @@
       { text: 'Nice Nice Nice!', id: 542328 }
     ];
 
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    // check adult using some method
+    const adult = people.some(person => ((new Date()).getFullYear() - person.year >= 19));
+    console.log(adult);
+    // Array.prototype.every() // is everyone 19 or older?
+    const allAdults = people.every(person => ((new Date()).getFullYear() - person.year >= 19));
+    console.log(allAdults);
+
   </script>
 </body>
 </html>
