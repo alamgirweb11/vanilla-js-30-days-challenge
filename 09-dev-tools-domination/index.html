@@ -16,6 +16,64 @@
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
     }
+
+     // Regular
+     console.log("Regular error!");
+
+    // Interpolated
+    console.log('Interpolated Error!');
+
+    // Styled
+    console.log('%c Error Style!', 'color: red; font-weight: bold;');
+
+    // warning!
+    console.warn('Warning error!');
+
+    // Error :|
+    console.error('Error type console!');
+
+    // Info
+    console.info("It's all about console tricks!");
+
+    // Testing
+    const testClass = document.querySelector('p');
+    console.assert(testClass.classList.contains('p'), 'Class exists!');
+    console.assert(testClass.classList.contains('text-class'), 'Class not exists!');
+
+    // clearing
+    // console.clear(); // clear all console
+
+    // Viewing DOM Elements
+    console.log(testClass);
+    console.dir(testClass);
+
+    // Grouping together
+    dogs.forEach(dog => {
+        //  console.group(`Dog name is ${dog.name}`);
+         console.groupCollapsed(`Dog name is ${dog.name}`);
+         console.log(`Name : ${dog.name}`);
+         console.groupEnd(`Dog name is ${dog.name}`);
+    });
+
+    // counting
+    console.count('Hello');
+    console.count('Hello');
+    console.count('Hello');
+    console.count('Hello');
+    console.count('Black');
+    console.count('Black');
+    console.count('Black');
+    console.count('Navy');
+
+    // timing
+   console.time('Fetching data time');
+   fetch('https://jsonplaceholder.typicode.com/todos/1')
+   .then(todo => todo.json())
+   .then(todo => {
+       console.timeEnd('Fetching data time');
+       console.log(todo);
+       console.table(todo);
+   })
   </script>
 </body>
 </html>
