@@ -9,6 +9,8 @@ const ranges = player.querySelectorAll('.player__slider');
 
 
 // functions
+
+// play and pause function
 function togglePlay(){
     const method = video.paused ? 'play' : 'pause';
     video[method]();
@@ -17,10 +19,25 @@ function togglePlay(){
 function updateButton(){
        const icon = this.paused ? '►' : '❚ ❚';
        toggle.textContent = icon;
+} 
+
+// skip function
+function skip(){
+   video.currentTime += parseFloat(this.dataset.skip);
+}
+
+function handleRangeUpdate(){
+    video[this.name] = this.value;
 }
 
 // event listener
+// pause and play event
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 toggle.addEventListener('click', togglePlay);
+
+// skip 
+skipButtons.forEach(button => button.addEventListener('click', skip));
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
