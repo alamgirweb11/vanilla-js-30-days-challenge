@@ -189,9 +189,19 @@
        .map(node => node.dataset.time)
        .map(timeCode => {
            const [mins, secs] = timeCode.split(':').map(parseFloat);
-          //  return (mins * 60) + secs;
-           console.log(mins, secs);
+           return (mins * 60) + secs;
        })
+       .reduce((total, vidSeconds) => total + vidSeconds)
+
+       let secondLeft = seconds;
+       const hours = Math.floor(screenLeft / 3600);
+       secondLeft = screenLeft % 3600;
+
+       const mins = Math.floor(secondLeft / 60);
+       secondLeft = secondLeft % 60;
+      
+       console.log(hours, mins, secondLeft);
+
 </script>
 </body>
 </html>
