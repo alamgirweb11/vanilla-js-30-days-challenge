@@ -24,6 +24,8 @@ function paintToCanvas() {
 
     return  setInterval(() => {
           ctx.drawImage(video, 0, 0, width, height);
+          let pixels = ctx.getImageData(0, 0, width, height);
+          pixels = redEffect(pixels);
       }, 16);
 }
 
@@ -39,6 +41,9 @@ function takePhoto() {
       link.innerHTML = `<img src="${data}" alt="camera pic" />`
       link.textContent = 'Download Image';
       strip.insertBefore(link, strip.firstChild);
+}
+
+function redEffect(pixels) {
 }
 
 getVideo();
